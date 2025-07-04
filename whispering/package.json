@@ -1,0 +1,39 @@
+{
+  "name": "nodejs-for-beginners",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "author": "Alex Gioffre'",
+  "scripts": {
+    "start": "node --require dotenv/config index.js",
+    "test": "jest --setupFiles dotenv/config",
+    "test:coverage": "jest --coverage --setupFiles dotenv/config",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "infra:start": "docker-compose up -d --build",
+    "infra:stop": "docker-compose down --remove-orphans"
+  },
+  "license": "ISC",
+  "standard": {
+    "env": [
+      "jest"
+    ],
+    "ignore": [
+      "public/*.js"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.0.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.0",
+    "jest": "^30.0.4",
+    "standard": "^17.1.2",
+    "supertest": "^7.1.1"
+  }
+}
